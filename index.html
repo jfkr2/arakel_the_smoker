@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>اراكيل ذي سموكر | Smoker Shisha</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #0f1115;
+            --card-bg: #1a1d24;
+            --accent-color: #ffb703;
+            --text-color: #ffffff;
+            --text-secondary: #a0a5b1;
+            --green-whatsapp: #25d366;
+            --insta-color: #e1306c;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Cairo', sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            display: flex;
+            justify-content: center;
+            padding: 20px 10px;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 480px;
+            background: var(--bg-color);
+            text-align: center;
+        }
+
+        /* Profile Header */
+        .profile-card {
+            background: var(--card-bg);
+            padding: 25px 20px;
+            border-radius: 20px;
+            border: 1px solid rgba(255, 183, 3, 0.2);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            margin-bottom: 20px;
+        }
+
+        .logo {
+            width: 110px;
+            height: 110px;
+            border-radius: 50%;
+            border: 3px solid var(--accent-color);
+            object-fit: cover;
+            margin-bottom: 15px;
+            box-shadow: 0 0 20px rgba(255, 183, 3, 0.3);
+        }
+
+        h1 {
+            font-size: 24px;
+            font-weight: 900;
+            color: var(--accent-color);
+            margin-bottom: 5px;
+        }
+
+        p.subtitle {
+            color: var(--text-secondary);
+            font-size: 14px;
+            margin-bottom: 15px;
+        }
+
+        /* Buttons Section */
+        .social-links {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-bottom: 25px;
+        }
+
+        .btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            padding: 14px;
+            border-radius: 12px;
+            font-weight: 700;
+            font-size: 16px;
+            text-decoration: none;
+            color: #fff;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .btn:active {
+            transform: scale(0.98);
+        }
+
+        .btn-whatsapp {
+            background-color: var(--green-whatsapp);
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
+        }
+
+        .btn-insta {
+            background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+            box-shadow: 0 4px 15px rgba(225, 48, 108, 0.3);
+        }
+
+        /* Menu Section */
+        .section-title {
+            text-align: right;
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--accent-color);
+            margin: 20px 5px 10px 5px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .menu-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .menu-item {
+            background: var(--card-bg);
+            padding: 15px;
+            border-radius: 14px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-right: 4px solid var(--accent-color);
+            text-align: right;
+        }
+
+        .item-info h3 {
+            font-size: 16px;
+            font-weight: 700;
+        }
+
+        .item-info p {
+            font-size: 12px;
+            color: var(--text-secondary);
+        }
+
+        .item-price {
+            font-size: 15px;
+            font-weight: 700;
+            color: var(--accent-color);
+        }
+
+        /* Footer */
+        .footer {
+            margin-top: 30px;
+            font-size: 12px;
+            color: var(--text-secondary);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Header -->
+        <div class="profile-card">
+            <!-- تقدر تحط رابط الصورة مالتك هنا -->
+            <img src="https://via.placeholder.com/150" alt="Smoker Logo" class="logo">
+            <h1>اراكيل ذي سموكر 💨</h1>
+            <p class="subtitle">أرقى أنواع الأراكيل والنكهات المتميزة - خدمة توصيل سريعة 🛵</p>
+            
+            <!-- أزرار التواصل -->
+            <div class="social-links">
+                <a href="https://wa.me/9647XXXXXXXX" class="btn btn-whatsapp" target="_blank">
+                    💬 اطلب عبر الواتساب مباشر
+                </a>
+                <a href="https://instagram.com/" class="btn btn-insta" target="_blank">
+                    📸 تابعنا على إنستغرام
+                </a>
+            </div>
+        </div>
+
+        <!-- قائمة المنيو والنكهات -->
+        <div class="section-title">📌 قائمة النكهات والأراكيل</div>
+        <div class="menu-grid">
+            <div class="menu-item">
+                <div class="item-info">
+                    <h3>ارกيلة فاخر خاس</h3>
+                    <p>نكهات مشكلة حسب الطلب + تبديل سريع</p>
+                </div>
+                <div class="item-price">10,000 د.ع</div>
+            </div>
+
+            <div class="menu-item">
+                <div class="item-info">
+                    <h3>أرجيلة دبل تفاح فاخر</h3>
+                    <p>طعم قوي وثابت مع فحم بريميوم</p>
+                </div>
+                <div class="item-price">8,000 د.ع</div>
+            </div>
+
+            <div class="menu-item">
+                <div class="item-info">
+                    <h3>أرجيلة علك ونعناع / حامض</h3>
+                    <p>انتعاش خاص وشغل مرتب</p>
+                </div>
+                <div class="item-price">8,000 د.ع</div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            <p>© 2026 اراكيل ذي سموكر - جميع الحقوق محفوظة</p>
+        </div>
+    </div>
+
+</body>
+</html>
