@@ -3,233 +3,88 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>متجر الأراجيل والمستلزمات - المنيو الرسمي</title>
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet">
-    <!-- FontAwesome Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <!-- Tailwind CSS CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        brand: {
-                            gold: '#f59e0b',
-                            dark: '#0f172a',
-                            card: '#1e293b',
-                            accent: '#10b981'
-                        }
-                    },
-                    fontFamily: {
-                        cairo: ['Cairo', 'sans-serif']
-                    }
-                }
-            }
-        }
-    </script>
+    <title>متجر ذا سموكر</title>
     <style>
-        body {
-            font-family: 'Cairo', sans-serif;
-            background-color: #0b0f19;
-            color: #f3f4f6;
-        }
-        .product-card {
-            transition: transform 0.25s ease, box-shadow 0.25s ease;
-        }
-        .product-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px -5px rgba(245, 158, 11, 0.25);
-        }
-        .custom-scrollbar::-webkit-scrollbar {
-            height: 6px;
-        }
-        .custom-scrollbar::-webkit-scrollbar-track {
-            background: #1e293b;
-            border-radius: 10px;
-        }
-        .custom-scrollbar::-webkit-scrollbar-thumb {
-            background: #f59e0b;
-            border-radius: 10px;
-        }
+        :root { --gold: #d4af37; --bg: #1a1a1a; --text: #ffffff; }
+        body { font-family: 'Segoe UI', sans-serif; background-color: var(--bg); color: var(--text); margin: 0; padding: 0; }
+        header { text-align: center; padding: 20px; background: #000; border-bottom: 2px solid var(--gold); }
+        .logo { max-width: 120px; height: auto; border-radius: 50%; border: 2px solid var(--gold); margin-bottom: 10px; }
+        .contact-bar { display: flex; justify-content: space-around; flex-wrap: wrap; background: #333; padding: 10px; position: sticky; top: 0; z-index: 100; }
+        .contact-btn { color: var(--gold); text-decoration: none; font-size: 14px; font-weight: bold; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 15px; padding: 15px; }
+        .card { background: #2a2a2a; border-radius: 10px; padding: 10px; text-align: center; border: 1px solid #444; }
+        .card img { width: 100%; height: 150px; object-fit: cover; border-radius: 8px; }
+        .price { color: var(--gold); font-size: 18px; font-weight: bold; margin: 5px 0; }
+        .note { font-size: 10px; color: #aaa; margin-bottom: 5px; }
+        .btn-buy { background: var(--gold); color: #000; border: none; padding: 8px; width: 100%; border-radius: 5px; font-weight: bold; cursor: pointer; }
     </style>
 </head>
-<body class="min-h-screen flex flex-col justify-between">
+<body>
 
-    <!-- Header Section -->
-    <header class="bg-slate-900 border-b border-slate-800 sticky top-0 z-50 shadow-xl">
-        <div class="max-w-7xl mx-auto px-4 py-4 flex flex-col md:flex-row justify-between items-center gap-4">
-            <div class="flex items-center gap-3">
-                <div class="w-12 h-12 bg-amber-500 rounded-full flex items-center justify-center text-slate-950 font-bold text-2xl shadow-lg shadow-amber-500/20">
-                    <i class="fa-solid fa-smoking"></i>
-                </div>
-                <div>
-                    <h1 class="text-2xl font-bold text-amber-500 tracking-wide">متجر الأراجيل والسحبات</h1>
-                    <p class="text-xs text-slate-400">أفضل الأراجيل، السحبات، والمستلزمات بأفضل الأسعار</p>
-                </div>
+<header>
+    <img src="logo.jpg" alt="لوكو متجر ذا سموكر" class="logo">
+    <h1>متجر ذا سموكر 💨</h1>
+</header>
+
+<div class="contact-bar">
+    <a href="https://wa.me/9647760115333" class="contact-btn">واتساب 💬</a>
+    <a href="tel:+9647760115333" class="contact-btn">اتصال 📞</a>
+    <a href="https://www.facebook.com/share/1CnFTDmoaQ/?mibextid=wwXIfr" class="contact-btn">فيسبوك 📘</a>
+    <a href="https://www.instagram.com/arakel_the_smoker?igsh=MXZpcTFleHZlcHNuYw==" class="contact-btn">انستغرام 📸</a>
+    <a href="https://maps.app.goo.gl/1uj2kJSokqWUa4bn9" class="contact-btn">موقعنا 📍</a>
+</div>
+
+<div class="grid" id="productGrid">
+    <!-- المنتجات تنعرض هنا -->
+</div>
+
+<script>
+    const products = [
+        { name: "اركيلة الماني صغير", price: "35,000", img: "item1.jpg" },
+        { name: "اركيلة الماني كبير", price: "50,000", img: "item2.jpg" },
+        { name: "سحبة سلطان", price: "15,000", img: "item3.jpg" },
+        { name: "سحبة اوك", price: "13,000", img: "item4.jpg" },
+        { name: "سحبة اوكسبار", price: "17,000", img: "item5.jpg" },
+        { name: "سحبة فوزول", price: "15,000", img: "item6.jpg" },
+        { name: "سحبة EZY", price: "7,000", img: "item7.jpg" },
+        { name: "سحبة KUZ", price: "8,000", img: "item8.jpg" },
+        { name: "سحبة TRUE STORE", price: "8,000", img: "item9.jpg" },
+        { name: "سحبة ال فارز", price: "5,000", img: "item10.jpg" },
+        { name: "بكار صاج 30cm", price: "8,000", img: "item11.jpg" },
+        { name: "بكار صاج صغير", price: "5,000", img: "item12.jpg" },
+        { name: "بكار صاج 40cm", price: "12,000", img: "item13.jpg" },
+        { name: "بكار جوز 30cm", price: "5,000", img: "item14.jpg" },
+        { name: "بكار جوز صغير", price: "2,000", img: "item15.jpg" },
+        { name: "بكار جاو الاصلي", price: "15,000", img: "item16.jpg" },
+        { name: "بكار جوز 50cm", price: "12,000", img: "item17.jpg" },
+        { name: "فاخر (تفاحتين/نعناع/علج)", price: "1,500", img: "item18.jpg" },
+        { name: "النخله (تفاحتين)", price: "2,000", img: "item19.jpg" },
+        { name: "مزاج (نعناع/علج ونعناع)", price: "1,250", img: "item20.jpg" },
+        { name: "العراب (علج ونعناع/نعناع)", price: "1,250", img: "item21.jpg" },
+        { name: "اداليا (نعناع/انكليزي)", price: "1,250", img: "item22.jpg" },
+        { name: "زين (نعناع)", price: "1,250", img: "item23.jpg" },
+        { name: "شربتلي (نعناع/علج ونعناع)", price: "1,250", img: "item24.jpg" },
+        { name: "جي بي ار (نعناع)", price: "1,250", img: "item25.jpg" },
+        { name: "مزايا (انكليزي/ليمون/تفاحتين)", price: "1,250", img: "item26.jpg" },
+        { name: "فنجان بصمه سيراميك", price: "5,000", img: "item27.jpg", note: "تتوفر أشكال أخرى" },
+        { name: "فنجان 5 زروف", price: "2,000", img: "item28.jpg" },
+        { name: "فنجان بصمه", price: "2,000", img: "item29.jpg" },
+        { name: "دومينو", price: "4,000", img: "item30.jpg" }
+    ];
+
+    const grid = document.getElementById('productGrid');
+    products.forEach(p => {
+        grid.innerHTML += `
+            <div class="card">
+                <img src="${p.img}" alt="${p.name}">
+                <h3>${p.name}</h3>
+                ${p.note ? `<div class="note">${p.note}</div>` : ''}
+                <div class="price">${p.price} د.ع</div>
+                <button class="btn-buy" onclick="window.open('https://wa.me/9647760115333?text=اريد اطلب ${p.name}')">طلب عبر الواتساب</button>
             </div>
+        `;
+    });
+</script>
 
-            <!-- Search Bar -->
-            <div class="relative w-full md:w-80">
-                <input type="text" id="searchInput" onkeyup="filterProducts()" placeholder="ابحث عن مادة..." 
-                       class="w-full bg-slate-800 border border-slate-700 text-white rounded-xl py-2 px-4 pr-10 focus:outline-none focus:border-amber-500 transition-colors">
-                <i class="fa-solid fa-magnifying-glass absolute right-3 top-3 text-slate-400"></i>
-            </div>
-        </div>
-
-        <!-- Category Tabs -->
-        <div class="max-w-7xl mx-auto px-4 pb-3 pt-1 overflow-x-auto custom-scrollbar flex gap-2">
-            <button onclick="setCategory('all')" class="cat-btn active bg-amber-500 text-slate-950 font-bold px-4 py-1.5 rounded-lg text-sm whitespace-nowrap transition">الكل</button>
-            <button onclick="setCategory('hookah')" class="cat-btn bg-slate-800 hover:bg-slate-700 text-slate-200 px-4 py-1.5 rounded-lg text-sm whitespace-nowrap transition">أراجيل</button>
-            <button onclick="setCategory('vape')" class="cat-btn bg-slate-800 hover:bg-slate-700 text-slate-200 px-4 py-1.5 rounded-lg text-sm whitespace-nowrap transition">سحبات</button>
-            <button onclick="setCategory('bakar')" class="cat-btn bg-slate-800 hover:bg-slate-700 text-slate-200 px-4 py-1.5 rounded-lg text-sm whitespace-nowrap transition">بكار</button>
-            <button onclick="setCategory('maassel')" class="cat-btn bg-slate-800 hover:bg-slate-700 text-slate-200 px-4 py-1.5 rounded-lg text-sm whitespace-nowrap transition">معسل وطعوم</button>
-            <button onclick="setCategory('accessories')" class="cat-btn bg-slate-800 hover:bg-slate-700 text-slate-200 px-4 py-1.5 rounded-lg text-sm whitespace-nowrap transition">فناجين وألعاب</button>
-        </div>
-    </header>
-
-    <!-- Main Content -->
-    <main class="max-w-7xl mx-auto px-4 py-8 flex-grow w-full">
-        <!-- Products Grid -->
-        <div id="productsGrid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-            <!-- Products will be generated dynamically via JavaScript -->
-        </div>
-
-        <!-- No Results Message -->
-        <div id="noResults" class="hidden text-center py-16">
-            <i class="fa-solid fa-circle-exclamation text-5xl text-slate-600 mb-3"></i>
-            <p class="text-slate-400 text-lg">لم يتم العثور على أي مواد تطابق بحثك.</p>
-        </div>
-    </main>
-
-    <!-- Footer -->
-    <footer class="bg-slate-900 border-t border-slate-800 py-6 text-center text-slate-500 text-sm">
-        <p>جميع الحقوق محفوظة &copy; 2026 - متجر الأراجيل والمستلزمات</p>
-    </footer>
-
-    <!-- JavaScript Logic -->
-    <script>
-        // WhatsApp Phone Number (ضع رقمك هنا عند الحاجة)
-        const WHATSAPP_NUMBER = "9647000000000"; 
-
-        // Product Catalog Array (30 Items)
-        const products = [
-            { id: 1, name: "اركيلة الماني صغير", price: "35,000 د.ع", category: "hookah", image: "item1.jpg", note: "" },
-            { id: 2, name: "اركيلة الماني كبير", price: "50,000 د.ع", category: "hookah", image: "item2.jpg", note: "" },
-            { id: 3, name: "سحبة سلطان", price: "15,000 د.ع", category: "vape", image: "item3.jpg", note: "" },
-            { id: 4, name: "سحبة اوك", price: "13,000 د.ع", category: "vape", image: "item4.jpg", note: "" },
-            { id: 5, name: "سحبة اوكسبار", price: "17,000 د.ع", category: "vape", image: "item5.jpg", note: "" },
-            { id: 6, name: "سحبة فوزول", price: "15,000 د.ع", category: "vape", image: "item6.jpg", note: "" },
-            { id: 7, name: "سحبة EZY", price: "7,000 د.ع", category: "vape", image: "item7.jpg", note: "" },
-            { id: 8, name: "سحبة KUZ", price: "8,000 د.ع", category: "vape", image: "item8.jpg", note: "" },
-            { id: 9, name: "سحبة TRUE STORE", price: "8,000 د.ع", category: "vape", image: "item9.jpg", note: "" },
-            { id: 10, name: "سحبة ال فارز", price: "5,000 د.ع", category: "vape", image: "item10.jpg", note: "" },
-            { id: 11, name: "بكار صاج 30cm", price: "8,000 د.ع", category: "bakar", image: "item11.jpg", note: "" },
-            { id: 12, name: "بكار صاج صغير", price: "5,000 د.ع", category: "bakar", image: "item12.jpg", note: "" },
-            { id: 13, name: "بكار صاج 40cm", price: "12,000 د.ع", category: "bakar", image: "item13.jpg", note: "" },
-            { id: 14, name: "بكار جوز 30cm", price: "5,000 د.ع", category: "bakar", image: "item14.jpg", note: "" },
-            { id: 15, name: "بكار جوز صغير", price: "2,000 د.ع", category: "bakar", image: "item15.jpg", note: "" },
-            { id: 16, name: "بكار جاو الاصلي", price: "15,000 د.ع", category: "bakar", image: "item16.jpg", note: "" },
-            { id: 17, name: "بكار جوز 50cm", price: "12,000 د.ع", category: "bakar", image: "item17.jpg", note: "" },
-            { id: 18, name: "فاخر", price: "1,500 د.ع", category: "maassel", image: "item18.jpg", note: "الطعوم: تفاحتين / نعناع / علج ونعناع" },
-            { id: 19, name: "النخله", price: "2,000 د.ع", category: "maassel", image: "item19.jpg", note: "الطعوم: تفاحتين فقط" },
-            { id: 20, name: "مزاج", price: "1,250 د.ع", category: "maassel", image: "item20.jpg", note: "الطعوم: نعناع / علج ونعناع" },
-            { id: 21, name: "العراب", price: "1,250 د.ع", category: "maassel", image: "item21.jpg", note: "الطعوم: علج ونعناع / نعناع" },
-            { id: 22, name: "اداليا", price: "1,250 د.ع", category: "maassel", image: "item22.jpg", note: "الطعوم: نعناع / علج ونعناع / انكليزي" },
-            { id: 23, name: "زين", price: "1,250 د.ع", category: "maassel", image: "item23.jpg", note: "الطعوم: نعناع فقط" },
-            { id: 24, name: "شربتلي", price: "1,250 د.ع", category: "maassel", image: "item24.jpg", note: "الطعوم: نعناع / علج ونعناع" },
-            { id: 25, name: "جي بي ار", price: "1,250 د.ع", category: "maassel", image: "item25.jpg", note: "الطعوم: نعناع فقط" },
-            { id: 26, name: "مزايا", price: "1,250 د.ع", category: "maassel", image: "item26.jpg", note: "الطعوم: انكليزي / ليمون / تفاحتين" },
-            { id: 27, name: "فنجان بصمه سيراميك", price: "5,000 د.ع", category: "accessories", image: "item27.jpg", note: "تتوفر أشكال وألوان أخرى" },
-            { id: 28, name: "فنجان 5 زروف", price: "2,000 د.ع", category: "accessories", image: "item28.jpg", note: "" },
-            { id: 29, name: "فنجان بصمه", price: "2,000 د.ع", category: "accessories", image: "item29.jpg", note: "" },
-            { id: 30, name: "دومينو", price: "4,000 د.ع", category: "accessories", image: "item30.jpg", note: "" }
-        ];
-
-        let currentCategory = 'all';
-
-        // Display Products
-        function renderProducts() {
-            const grid = document.getElementById('productsGrid');
-            const noResults = document.getElementById('noResults');
-            const searchVal = document.getElementById('searchInput').value.trim().toLowerCase();
-
-            grid.innerHTML = '';
-            let count = 0;
-
-            products.forEach(item => {
-                const matchCategory = (currentCategory === 'all' || item.category === currentCategory);
-                const matchSearch = item.name.toLowerCase().includes(searchVal) || item.note.toLowerCase().includes(searchVal);
-
-                if (matchCategory && matchSearch) {
-                    count++;
-                    const card = document.createElement('div');
-                    card.className = "product-card bg-slate-800 border border-slate-700 rounded-2xl overflow-hidden flex flex-col justify-between";
-
-                    const message = encodeURIComponent(`مرحباً، أريد طلب:\nالمادة: ${item.name}\nالسعر: ${item.price}`);
-                    const waLink = `https://wa.me/${WHATSAPP_NUMBER}?text=${message}`;
-
-                    card.innerHTML = `
-                        <div>
-                            <!-- Image Container -->
-                            <div class="relative w-full h-52 bg-slate-900 flex items-center justify-center p-3 overflow-hidden border-b border-slate-700/50">
-                                <img src="${item.image}" alt="${item.name}" 
-                                     class="max-h-full max-w-full object-contain rounded-lg"
-                                     onerror="this.onerror=null; this.src='https://via.placeholder.com/300x300/1e293b/f59e0b?text=${encodeURIComponent(item.name)}';">
-                            </div>
-                            
-                            <!-- Content -->
-                            <div class="p-4">
-                                <h3 class="text-lg font-bold text-white mb-1">${item.name}</h3>
-                                <div class="text-amber-500 font-bold text-xl mb-2">${item.price}</div>
-                                ${item.note ? `<p class="text-xs text-slate-400 bg-slate-900/60 p-2 rounded-lg border border-slate-700/50 mb-2"><i class="fa-solid fa-circle-info text-amber-500 ml-1"></i> ${item.note}</p>` : ''}
-                            </div>
-                        </div>
-
-                        <!-- Action Button -->
-                        <div class="p-4 pt-0">
-                            <a href="${waLink}" target="_blank" 
-                               class="w-full bg-emerald-600 hover:bg-emerald-500 text-white font-bold py-2.5 px-4 rounded-xl flex items-center justify-center gap-2 transition duration-200 text-sm shadow-lg shadow-emerald-600/20">
-                               <i class="fa-brands fa-whatsapp text-lg"></i>
-                               طلب عبر الواتساب
-                            </a>
-                        </div>
-                    `;
-                    grid.appendChild(card);
-                }
-            });
-
-            if (count === 0) {
-                noResults.classList.remove('hidden');
-            } else {
-                noResults.classList.add('hidden');
-            }
-        }
-
-        // Category Switcher
-        function setCategory(cat) {
-            currentCategory = cat;
-            document.querySelectorAll('.cat-btn').forEach(btn => {
-                btn.classList.remove('bg-amber-500', 'text-slate-950', 'font-bold');
-                btn.classList.add('bg-slate-800', 'text-slate-200');
-            });
-
-            event.target.classList.remove('bg-slate-800', 'text-slate-200');
-            event.target.classList.add('bg-amber-500', 'text-slate-950', 'font-bold');
-
-            renderProducts();
-        }
-
-        // Filter Logic
-        function filterProducts() {
-            renderProducts();
-        }
-
-        // Initial Render
-        document.addEventListener('DOMContentLoaded', renderProducts);
-    </script>
 </body>
 </html>
