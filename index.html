@@ -3,70 +3,67 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>متجر ذا سموكر</title>
+    <title>The Smoker | المتجر العصري</title>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap" rel="stylesheet">
     <style>
-        :root { --gold: #d4af37; --bg: #121212; --card-bg: #1e1e1e; --text: #ffffff; }
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: var(--bg); color: var(--text); margin: 0; padding: 0; scroll-behavior: smooth; }
+        :root { --gold: #d4af37; --bg: #0a0a0a; --glass: rgba(255, 255, 255, 0.05); }
+        body { font-family: 'Tajawal', sans-serif; background-color: var(--bg); color: #fff; margin: 0; padding: 0; background-image: radial-gradient(circle at top, #1a1a1a, #0a0a0a); min-height: 100vh; }
         
-        header { text-align: center; padding: 25px 15px; background: linear-gradient(180deg, #000000 0%, #121212 100%); border-bottom: 2px solid var(--gold); }
-        .logo { width: 130px; height: 130px; border-radius: 50%; border: 3px solid var(--gold); box-shadow: 0 0 15px rgba(212, 175, 55, 0.4); object-fit: cover; margin-bottom: 10px; }
-        
-        /* شريط التواصل المباشر - أزرار كبيرة بارزة */
-        .contact-bar { display: flex; flex-direction: column; gap: 10px; padding: 15px; max-width: 500px; margin: 0 auto; }
-        .contact-btn { display: flex; align-items: center; justify-content: center; gap: 10px; background: #252525; color: var(--gold); border: 2px solid var(--gold); padding: 12px 20px; border-radius: 25px; text-decoration: none; font-size: 16px; font-weight: bold; box-shadow: 0 4px 10px rgba(0,0,0,0.5); transition: 0.3s; }
-        .contact-btn:active { transform: scale(0.98); background: var(--gold); color: #000; }
-        
-        /* شريط البحث والفئات */
-        .controls { padding: 15px; max-width: 600px; margin: 0 auto; text-align: center; }
-        .search-input { width: 90%; padding: 12px; border-radius: 20px; border: 1px solid var(--gold); background: #1a1a1a; color: #fff; text-align: center; font-size: 15px; margin-bottom: 15px; outline: none; }
-        .categories { display: flex; justify-content: center; flex-wrap: wrap; gap: 8px; margin-bottom: 15px; }
-        .cat-btn { background: #2a2a2a; color: #fff; border: 1px solid #444; padding: 8px 16px; border-radius: 20px; font-size: 13px; cursor: pointer; transition: 0.3s; }
-        .cat-btn.active, .cat-btn:hover { background: var(--gold); color: #000; border-color: var(--gold); font-weight: bold; }
+        header { text-align: center; padding: 40px 20px; }
+        .logo { width: 140px; height: 140px; border-radius: 30px; border: 2px solid var(--gold); box-shadow: 0 0 30px rgba(212, 175, 55, 0.3); transition: transform 0.3s; }
+        .logo:hover { transform: scale(1.05); }
+        h1 { margin-top: 15px; font-size: 28px; letter-spacing: 2px; color: var(--gold); }
 
-        /* شبكة المنتجات - تصميم متكور */
-        .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 15px; padding: 15px; max-width: 1000px; margin: 0 auto; }
-        .card { background: var(--card-bg); border-radius: 18px; padding: 12px; text-align: center; border: 1px solid #333; box-shadow: 0 6px 12px rgba(0,0,0,0.4); display: flex; flex-direction: column; justify-content: space-between; }
-        .card img { width: 100%; height: 160px; object-fit: cover; border-radius: 14px; margin-bottom: 8px; }
-        .card h3 { font-size: 15px; margin: 5px 0; color: #fff; }
-        .price { color: var(--gold); font-size: 16px; font-weight: bold; margin: 4px 0; }
-        .note { font-size: 11px; color: #aaa; margin-bottom: 8px; }
-        .btn-buy { background: var(--gold); color: #000; border: none; padding: 10px; width: 100%; border-radius: 12px; font-weight: bold; cursor: pointer; font-size: 13px; box-shadow: 0 2px 5px rgba(0,0,0,0.3); }
-        .btn-buy:active { opacity: 0.8; }
+        /* شريط التواصل - تصميم زجاجي */
+        .contact-bar { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; padding: 15px; max-width: 600px; margin: 0 auto; }
+        .contact-btn { background: var(--glass); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.1); padding: 12px; border-radius: 15px; text-decoration: none; color: #fff; text-align: center; font-size: 13px; transition: 0.4s; }
+        .contact-btn:hover { border-color: var(--gold); background: rgba(212, 175, 55, 0.1); }
+        .full-width { grid-column: span 2; font-weight: bold; color: var(--gold); }
+
+        /* الفلاتر والبحث */
+        .controls { padding: 20px; text-align: center; position: sticky; top: 0; z-index: 100; background: rgba(10, 10, 10, 0.8); backdrop-filter: blur(15px); }
+        .search-input { width: 80%; padding: 12px; border-radius: 25px; border: 1px solid #333; background: #1a1a1a; color: #fff; text-align: center; }
+        .categories { display: flex; justify-content: center; gap: 10px; margin-top: 15px; overflow-x: auto; padding-bottom: 5px; }
+        .cat-btn { background: #222; border: none; padding: 8px 18px; border-radius: 20px; color: #aaa; cursor: pointer; white-space: nowrap; transition: 0.3s; }
+        .cat-btn.active { background: var(--gold); color: #000; font-weight: bold; }
+
+        /* الكروت - تصميم متطور */
+        .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 20px; padding: 20px; max-width: 1000px; margin: 0 auto; }
+        .card { background: var(--glass); backdrop-filter: blur(5px); border: 1px solid rgba(255,255,255,0.05); border-radius: 25px; padding: 15px; transition: 0.3s; }
+        .card:hover { transform: translateY(-10px); border-color: var(--gold); }
+        .card img { width: 100%; height: 140px; object-fit: cover; border-radius: 20px; }
+        .price { color: var(--gold); font-size: 18px; font-weight: bold; margin: 10px 0; }
+        .btn-buy { background: linear-gradient(45deg, #d4af37, #aa8c2c); border: none; padding: 10px; width: 100%; border-radius: 12px; color: #000; font-weight: bold; cursor: pointer; }
     </style>
 </head>
 <body>
 
 <header>
-    <img src="logo.jpg" alt="لوكو متجر ذا سموكر" class="logo">
-    <h1>متجر ذا سموكر 💨</h1>
+    <img src="logo.jpg" alt="Logo" class="logo">
+    <h1>THE SMOKER 💨</h1>
 </header>
 
-<!-- شريط التواصل المباشر الأزرار الكبيرة -->
-<div class="contact-bar">
-    <a href="https://wa.me/9647760115333" class="contact-btn">💬 تواصل عبر الواتساب</a>
-    <a href="tel:+9647760115333" class="contact-btn">📞 اتصال مباشر</a>
-    <a href="https://www.instagram.com/arakel_the_smoker?igsh=MXZpcTFleHZlcHNuYw==" class="contact-btn">📸 تابعنا على الانستغرام</a>
-    <a href="https://www.facebook.com/share/1CnFTDmoaQ/?mibextid=wwXIfr" class="contact-btn">📘 تابعنا على الفيسبوك</a>
-    <a href="https://maps.app.goo.gl/1uj2kJSokqWUa4bn9" class="contact-btn">📍 موقع المحل على الخريطة</a>
-    <a href="#menu-section" class="contact-btn" style="background: var(--gold); color: #000;">📜 منتجاتنا (المنيو)</a>
+<div class="contact-bar" id="contact">
+    <a href="https://wa.me/9647760115333" class="contact-btn">💬 واتساب</a>
+    <a href="tel:+9647760115333" class="contact-btn">📞 اتصال</a>
+    <a href="https://www.instagram.com/arakel_the_smoker" class="contact-btn">📸 انستغرام</a>
+    <a href="https://www.facebook.com/share/1CnFTDmoaQ/" class="contact-btn">📘 فيسبوك</a>
+    <a href="https://maps.app.goo.gl/1uj2kJSokqWUa4bn9" class="contact-btn full-width">📍 موقعنا على الخريطة</a>
 </div>
 
-<!-- شريط البحث والفئات -->
-<div class="controls" id="menu-section">
-    <input type="text" id="searchInput" class="search-input" placeholder="🔍 ابحث عن مادة..." onkeyup="filterProducts()">
+<div class="controls">
+    <input type="text" id="searchInput" class="search-input" placeholder="🔍 ابحث عن طلبك هنا..." onkeyup="filterProducts()">
     <div class="categories">
         <button class="cat-btn active" onclick="filterCategory('الكل', this)">الكل</button>
         <button class="cat-btn" onclick="filterCategory('أراجيل', this)">أراجيل</button>
         <button class="cat-btn" onclick="filterCategory('سحبات', this)">سحبات</button>
         <button class="cat-btn" onclick="filterCategory('بكار', this)">بكار</button>
         <button class="cat-btn" onclick="filterCategory('معسل', this)">معسل</button>
-        <button class="cat-btn" onclick="filterCategory('فناجين وألعاب', this)">فناجين وألعاب</button>
+        <button class="cat-btn" onclick="filterCategory('فناجين وألعاب', this)">فناجين</button>
     </div>
 </div>
 
-<div class="grid" id="productGrid">
-    <!-- المنتجات تنعرض هنا -->
-</div>
+<div class="grid" id="productGrid"></div>
 
 <script>
     const products = [
@@ -96,7 +93,7 @@
         { name: "شربتلي (نعناع/علج ونعناع)", price: "1,250", img: "item24.jpg", cat: "معسل" },
         { name: "جي بي ار (نعناع)", price: "1,250", img: "item25.jpg", cat: "معسل" },
         { name: "مزايا (انكليزي/ليمون/تفاحتين)", price: "1,250", img: "item26.jpg", cat: "معسل" },
-        { name: "فنجان بصمه سيراميك", price: "5,000", img: "item27.jpg", cat: "فناجين وألعاب", note: "تتوفر أشكال أخرى" },
+        { name: "فنجان بصمه سيراميك", price: "5,000", img: "item27.jpg", cat: "فناجين وألعاب" },
         { name: "فنجان 5 زروف", price: "2,000", img: "item28.jpg", cat: "فناجين وألعاب" },
         { name: "فنجان بصمه", price: "2,000", img: "item29.jpg", cat: "فناجين وألعاب" },
         { name: "دومينو", price: "4,000", img: "item30.jpg", cat: "فناجين وألعاب" }
@@ -107,22 +104,13 @@
     function renderProducts(items) {
         const grid = document.getElementById('productGrid');
         grid.innerHTML = "";
-        if(items.length === 0) {
-            grid.innerHTML = "<p style='grid-column: 1/-1; color: #888;'>لا توجد مواد مطابقة للبحث</p>";
-            return;
-        }
         items.forEach(p => {
             grid.innerHTML += `
                 <div class="card">
-                    <div>
-                        <img src="${p.img}" alt="${p.name}">
-                        <h3>${p.name}</h3>
-                        ${p.note ? `<div class="note">${p.note}</div>` : ''}
-                    </div>
-                    <div>
-                        <div class="price">${p.price} د.ع</div>
-                        <button class="btn-buy" onclick="window.open('https://wa.me/9647760115333?text=اريد اطلب ${p.name}')">طلب عبر الواتساب</button>
-                    </div>
+                    <img src="${p.img}" alt="${p.name}">
+                    <h3 style="margin-top:10px">${p.name}</h3>
+                    <div class="price">${p.price} د.ع</div>
+                    <button class="btn-buy" onclick="window.open('https://wa.me/9647760115333?text=اريد اطلب ${p.name}')">طلب الآن</button>
                 </div>
             `;
         });
@@ -144,10 +132,7 @@
         });
         renderProducts(filtered);
     }
-
-    // عرض الكل عند التحميل
     renderProducts(products);
 </script>
-
 </body>
 </html>
